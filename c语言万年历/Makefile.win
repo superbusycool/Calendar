@@ -1,0 +1,61 @@
+# Project: calendar
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o lunarcalendar.o lunarcalendarday.o lunarcalendarmonth.o festival.o location.o leapyear.o week.o month.o printweek.o year.o color.o
+LINKOBJ  = main.o lunarcalendar.o lunarcalendarday.o lunarcalendarmonth.o festival.o location.o leapyear.o week.o month.o printweek.o year.o color.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = calendar.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+lunarcalendar.o: lunarcalendar.c
+	$(CC) -c lunarcalendar.c -o lunarcalendar.o $(CFLAGS)
+
+lunarcalendarday.o: lunarcalendarday.c
+	$(CC) -c lunarcalendarday.c -o lunarcalendarday.o $(CFLAGS)
+
+lunarcalendarmonth.o: lunarcalendarmonth.c
+	$(CC) -c lunarcalendarmonth.c -o lunarcalendarmonth.o $(CFLAGS)
+
+festival.o: festival.c
+	$(CC) -c festival.c -o festival.o $(CFLAGS)
+
+location.o: location.c
+	$(CC) -c location.c -o location.o $(CFLAGS)
+
+leapyear.o: leapyear.c
+	$(CC) -c leapyear.c -o leapyear.o $(CFLAGS)
+
+week.o: week.c
+	$(CC) -c week.c -o week.o $(CFLAGS)
+
+month.o: month.c
+	$(CC) -c month.c -o month.o $(CFLAGS)
+
+printweek.o: printweek.c
+	$(CC) -c printweek.c -o printweek.o $(CFLAGS)
+
+year.o: year.c
+	$(CC) -c year.c -o year.o $(CFLAGS)
+
+color.o: color.c
+	$(CC) -c color.c -o color.o $(CFLAGS)

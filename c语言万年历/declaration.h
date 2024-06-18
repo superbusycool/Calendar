@@ -1,0 +1,13 @@
+int leapyear (int y);
+int week (int y,int m,int d );
+void month (int y, int m);
+void printweek(int w);
+void year(int y);
+int wherex();
+int wherey();
+void gotoxy(int x,int y); 
+void lunarcalendar(int y,int m,int d,int *p1,int *p2);
+void lunarcalendarmonth(int lm);
+void lunarcalendarday(int ld); 
+int festival(int y,int m,int d,int lm,int ld,int mod);
+void color(int x); 
